@@ -181,12 +181,12 @@ export default function Home() {
             <div className="w-12 h-0.5 bg-sage mb-14" />
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
             {forWhom.map((item, i) => {
               const Icon = item.icon;
               return (
-                <ScrollReveal key={item.label} delay={(i + 1) as 1 | 2 | 3}>
-                  <div className="bg-cream rounded-2xl p-8 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300">
+                <ScrollReveal key={item.label} delay={(i + 1) as 1 | 2 | 3} className="h-full">
+                  <div className="h-full bg-cream rounded-2xl p-8 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300">
                     <div className="w-11 h-11 rounded-xl bg-sage-mist flex items-center justify-center mb-5">
                       <Icon size={20} className="text-sage-dark" />
                     </div>
@@ -271,13 +271,14 @@ export default function Home() {
             <div className="w-12 h-0.5 bg-sage mb-14" />
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
             {services.map((service, i) => {
               const Icon = service.icon;
               return (
                 <ScrollReveal
                   key={service.title}
                   delay={Math.min(i + 1, 5) as 1 | 2 | 3 | 4 | 5}
+                  className="h-full"
                 >
                   <div
                     className={`bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300 h-full flex flex-col ${
@@ -436,12 +437,12 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto items-stretch">
             {/* Phone */}
-            <ScrollReveal delay={1}>
+            <ScrollReveal delay={1} className="h-full">
               <a
                 href="tel:+48XXXXXXXXX"
-                className="group flex items-center gap-5 bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300"
+                className="group h-full flex items-center gap-5 bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-sage-mist flex items-center justify-center flex-shrink-0 group-hover:bg-sage-dark transition-colors duration-300">
                   <Phone size={20} className="text-sage-dark group-hover:text-cream transition-colors duration-300" />
@@ -456,10 +457,10 @@ export default function Home() {
             </ScrollReveal>
 
             {/* Email */}
-            <ScrollReveal delay={2}>
+            <ScrollReveal delay={2} className="h-full">
               <a
                 href="mailto:kontakt@aneta-bedynska.pl"
-                className="group flex items-center gap-5 bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300"
+                className="group h-full flex items-center gap-5 bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-sage-mist flex items-center justify-center flex-shrink-0 group-hover:bg-sage-dark transition-colors duration-300">
                   <Mail size={20} className="text-sage-dark group-hover:text-cream transition-colors duration-300" />
