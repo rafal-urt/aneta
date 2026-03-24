@@ -15,8 +15,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  // ZMIEŃ: nazwa biura, tytuł i opis SEO
-  title: "Biuro Rachunkowe | Księgowość dla JDG — 100% online",
+  title: "Aneta Bedyńska | Księgowość dla JDG — 100% online",
   description:
     "Profesjonalna obsługa księgowa dla jednoosobowych działalności gospodarczych. Podatki, ZUS, dokumenty — sprawnie, terminowo i w 100% online.",
 };

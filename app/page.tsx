@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BookOpen,
   FileText,
@@ -131,35 +132,36 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Visual card */}
+          {/* Hero photo */}
           <div className="relative hidden lg:block">
-            {/* Main card */}
-            <div className="rounded-3xl bg-cream-dark border border-stone-light p-10 relative overflow-hidden">
-              {/* Decorative circle */}
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
+              <Image
+                src="/gfx/aneta_1.png"
+                alt="Aneta Bedyńska — księgowa, ekspert ds. rachunkowości i podatków"
+                fill
+                className="object-cover object-top"
+                sizes="50vw"
+                priority
+              />
+              {/* Subtle gradient at bottom */}
               <div
-                className="absolute -top-20 -right-20 w-64 h-64 rounded-full"
-                style={{ background: "rgba(107,124,101,0.08)" }}
+                className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+                style={{ background: "linear-gradient(to top, rgba(250,249,246,0.6) 0%, transparent 100%)" }}
                 aria-hidden="true"
               />
-              <div className="relative z-10">
-                <p className="font-serif text-2xl text-text-soft italic leading-snug mb-8">
-                  „Bezpieczeństwo podatkowe<br />to nie luksus — to podstawa<br />
-                  każdej dobrze prowadzonej firmy."
-                </p>
-                <div className="h-px bg-stone-light mb-8" />
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { val: "100%", label: "online" },
-                    { val: "7 lat", label: "doświadczenia" },
-                    { val: "JDG", label: "specjalizacja" },
-                    { val: "PL + UE", label: "zasięg" },
-                  ].map((stat) => (
-                    <div key={stat.label} className="bg-cream rounded-2xl p-4">
-                      <p className="font-serif text-2xl text-sage-dark mb-0.5">{stat.val}</p>
-                      <p className="text-xs text-text-muted">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
+            </div>
+            {/* Floating stats card */}
+            <div className="absolute -bottom-5 -left-6 bg-cream rounded-2xl shadow-md border border-stone-light px-6 py-4">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                {[
+                  { val: "7 lat", label: "doświadczenia" },
+                  { val: "100%", label: "online" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <p className="font-serif text-xl text-sage-dark leading-none mb-0.5">{stat.val}</p>
+                    <p className="text-xs text-text-muted">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -355,32 +357,14 @@ export default function Home() {
             {/* Photo placeholder */}
             <ScrollReveal>
               <div className="relative">
-                {/*
-                  ZMIEŃ: Zamień ten div na:
+                <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden">
                   <Image
-                    src="/zdjecie.jpg"
-                    alt="Imię Nazwisko — księgowa"
-                    width={560}
-                    height={640}
-                    className="rounded-3xl object-cover w-full"
+                    src="/gfx/aneta_2.png"
+                    alt="Aneta Bedyńska — ekspert ds. rachunkowości i podatków"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  i zaimportuj Image z "next/image"
-                */}
-                <div
-                  className="w-full aspect-[7/8] rounded-3xl flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-stone-light"
-                  style={{ background: "#f4f1ec" }}
-                >
-                  <div className="w-16 h-16 rounded-full bg-stone-light flex items-center justify-center mb-4">
-                    <Users size={28} className="text-stone" />
-                  </div>
-                  <p className="text-sm font-medium text-text-soft mb-1">
-                    {/* ZMIEŃ: Twoje zdjęcie */}
-                    Miejsce na Twoje zdjęcie
-                  </p>
-                  <p className="text-xs text-text-muted leading-relaxed max-w-xs">
-                    Zamień ten blok na komponent Image z&nbsp;next/image.<br />
-                    Plik umieść w katalogu <code className="bg-stone-light px-1 rounded">/public</code>
-                  </p>
                 </div>
                 {/* Floating badge */}
                 <div className="absolute -bottom-5 -right-5 bg-cream rounded-2xl shadow-md border border-stone-light px-5 py-4 hidden md:block">
@@ -397,9 +381,8 @@ export default function Home() {
                   O mnie
                 </p>
                 <h2 className="font-serif text-3xl md:text-4xl text-text leading-tight mb-6">
-                  {/* ZMIEŃ: Twoje imię i nazwisko */}
-                  Ekspert ds. rachunkowości{" "}
-                  <span className="italic text-sage-dark">i podatków</span>
+                  Aneta Bedyńska —{" "}
+                  <span className="italic text-sage-dark">ekspert ds. rachunkowości i podatków</span>
                 </h2>
                 <div className="w-12 h-0.5 bg-sage mb-8" />
 
@@ -467,6 +450,7 @@ export default function Home() {
                   <p className="text-xs text-text-muted uppercase tracking-wide mb-1">Telefon</p>
                   {/* ZMIEŃ: numer telefonu */}
                   <p className="font-medium text-text">+48 XXX XXX XXX</p>
+                  <p className="text-xs text-text-muted">Aneta Bedyńska</p>
                 </div>
               </a>
             </ScrollReveal>
@@ -474,7 +458,7 @@ export default function Home() {
             {/* Email */}
             <ScrollReveal delay={2}>
               <a
-                href="mailto:kontakt@biuro.pl"
+                href="mailto:kontakt@aneta-bedynska.pl"
                 className="group flex items-center gap-5 bg-cream rounded-2xl p-7 border border-stone-light hover:border-sage-light hover:shadow-sm transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-sage-mist flex items-center justify-center flex-shrink-0 group-hover:bg-sage-dark transition-colors duration-300">
@@ -483,7 +467,7 @@ export default function Home() {
                 <div>
                   <p className="text-xs text-text-muted uppercase tracking-wide mb-1">E-mail</p>
                   {/* ZMIEŃ: adres e-mail */}
-                  <p className="font-medium text-text">kontakt@biuro.pl</p>
+                  <p className="font-medium text-text">kontakt@aneta-bedynska.pl</p>
                 </div>
               </a>
             </ScrollReveal>
@@ -501,8 +485,7 @@ export default function Home() {
       {/* ─── FOOTER ─── */}
       <footer className="bg-cream-dark border-t border-stone-light py-8">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-text-muted">
-          {/* ZMIEŃ: nazwa biura */}
-          <p>© 2025 Biuro Rachunkowe</p>
+          <p>© 2026 Aneta Bedyńska — Biuro Rachunkowe</p>
           <div className="flex items-center gap-6">
             {/* ZMIEŃ: dodaj linki do polityki prywatności i regulaminu */}
             <a href="#" className="hover:text-sage-dark transition-colors">

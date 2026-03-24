@@ -34,14 +34,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-18">
-        {/* Logo / nazwa — ZMIEŃ */}
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           className="font-serif text-lg text-text tracking-wide hover:text-sage-dark transition-colors"
         >
-          {/* ZMIEŃ: nazwa biura rachunkowego */}
-          Biuro Rachunkowe
+          Aneta Bedyńska
         </a>
 
         {/* Desktop nav */}
